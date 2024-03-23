@@ -1,0 +1,885 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{% block title%} God's Care child Ministry Uganda{%endblock%}</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Favicon -->
+    <link href="{% static 'img/favicon.ico' %}" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/styles.css' %}"
+    />
+
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@600&family=Lobster+Two:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons Stylesheet -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Animate CSS -->
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet" />
+
+    <!-- Owl Carousel CSS -->
+    <link
+      href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Stylesheet -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+
+    <!-- Custom Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="container-xxl bg-white p-0">
+      <!-- Spinner Start -->
+      <div
+        id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+      >
+        <div
+          class="spinner-border text-primary"
+          style="width: 3rem; height: 3rem"
+          role="status"
+        >
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+      <!-- Spinner End -->
+
+      <!-- Navbar Start -->
+      <nav
+        class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0"
+      >
+        <a href="{% url 'index' %}" class="navbar-brand">
+          <h1 class="m-0 text-primary">
+            <i class="fa fa-book-reader me-3"></i>God'S Care Child Ministry
+            Uganda
+          </h1>
+        </a>
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav mx-auto">
+            <a href="{% url 'index' %}" class="nav-item nav-link active"
+              >Home</a
+            >
+            <a href="{% url 'about' %}" class="nav-item nav-link">About Us</a>
+
+            <a href="{% url 'classes' %}" class="nav-item nav-link">Posts</a>
+
+            <div class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                >Pages</a
+              >
+              <div
+                class="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0"
+              >
+                <a href="{% url 'facility' %}" class="dropdown-item"
+                  >Ministry Facilities</a
+                >
+                <a href="{% url 'ativities' %}" class="dropdown-item"
+                  >Activities</a
+                >
+                <a href="{% url 'calltoaction' %}" class="dropdown-item"
+                  >Become A Donar</a
+                >
+              </div>
+            </div>
+
+            <a href="{% url 'contact' %}" class="nav-item nav-link"
+              >Contact Us</a
+            >
+          </div>
+          <a href=""https://www.instagram.com/pastorssebattamadam/"" class="btn btn-primary rounded-pill px-3 d-none d-lg-block"
+            >Join Us<i class="fa fa-arrow-right ms-3"></i
+          ></a>
+        </div>
+      </nav>
+      <!-- Navbar End -->
+
+      {% block content %}
+
+      <!-- Carousel Start -->
+      <div class="container-fluid p-0 mb-5">
+        <div class="owl-carousel header-carousel position-relative">
+          <div class="owl-carousel-item position-relative">
+            <img
+              class="img-fluid"
+              src="{% static 'img/carousel-11.jpg' %}"
+              alt=""
+            />
+            <div
+              class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
+              style="background: rgba(0, 0, 0, 0.2)"
+            >
+              <div class="container">
+                <div class="row justify-content-start">
+                  <div class="col-10 col-lg-8">
+                    <h1 class="display-2 text-white animated slideInDown mb-4">
+                      The Nonprofit Organization For Children.
+                    </h1>
+                    <p class="fs-5 fw-medium text-white mb-4 pb-2">
+                      where we are dedicated to
+          providing care and support to children in need within our community at large.
+          JOIN THE ACTIVITIES NOW
+                    </p>
+                    <a
+                      href="{% url 'about' %}"
+                      class="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft"
+                      >Learn More</a
+                    >
+                    <a
+                      href="{% url 'contact' %}"
+                      class="btn btn-dark rounded-pill py-sm-3 px-sm-5 animated slideInRight"
+                      >Donate Now</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="owl-carousel-item position-relative">
+            <img
+              class="img-fluid"
+              src="{% static 'img/carousel-2.PNG' %}"
+              alt=""
+            />
+
+            <div
+              class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
+              style="background: rgba(0, 0, 0, 0.2)"
+            >
+              <div class="container">
+                <div class="row justify-content-start">
+                  <div class="col-10 col-lg-8">
+                    <h1 class="display-2 text-white animated slideInDown mb-4">
+                      Make A Brighter Future For an African Child
+                    </h1>
+                    <p class="fs-5 fw-medium text-white mb-4 pb-2">
+                      Every contribution, no matter how small, can make
+                       a significant difference in the life of an African child. 
+                       Your support could provide education, healthcare, and hope for a 
+                      brighter future. Please consider joining us in our mission to uplift and empower these children.
+                    </p>
+                    <a
+                      href="{% url 'about' %}"
+                      class="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft"
+                      >Learn More</a
+                    >
+                    <a
+                      href="{% url 'contact' %}"
+                      class="btn btn-dark rounded-pill py-sm-3 px-sm-5 animated slideInRight"
+                      >Donate Now</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Carousel End -->
+
+      <!-- Facilities Start -->
+      <div class="container-xxl py-5">
+        <div class="container">
+          <div
+            class="text-center mx-auto mb-5 wow fadeInUp"
+            data-wow-delay="0.1s"
+            style="max-width: 600px"
+          >
+            <h1 class="mb-3">Ministry Facilities</h1>
+            <p>To continue our mission of supporting children in need.</p>
+          </div>
+          <div class="row g-4">
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+              <div class="facility-item">
+                <div class="facility-icon bg-primary">
+                  <span class="bg-primary"></span>
+                  <i class="fa fa-bus-alt fa-3x text-primary"></i>
+                  <span class="bg-primary"></span>
+                </div>
+                <div class="facility-text bg-primary">
+                  <h3 class="text-primary mb-3">Farm Land</h3>
+                  <p class="mb-0">
+                    We need to enlarge the farm land with time to provide more
+                    resources for the children's nutrition and education.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+              <div class="facility-item">
+                <div class="facility-icon bg-success">
+                  <span class="bg-success"></span>
+                  <i class="fa fa-futbol fa-3x text-success"></i>
+                  <span class="bg-success"></span>
+                </div>
+                <div class="facility-text bg-success">
+                  <h3 class="text-success mb-3">Playground</h3>
+                  <p class="mb-0">
+                    The playground is essential for the children's physical and mental
+                    development. We aim to expand it to accommodate more activities
+                    and children.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+              <div class="facility-item">
+                <div class="facility-icon bg-warning">
+                  <span class="bg-warning"></span>
+                  <i class="fa fa-home fa-3x text-warning"></i>
+                  <span class="bg-warning"></span>
+                </div>
+                <div class="facility-text bg-warning">
+                  <h3 class="text-warning mb-3">Healthy Canteen</h3>
+                  <p class="mb-0">
+                    A healthy canteen is vital for providing nutritious meals to the
+                    children. We plan to establish one to improve their health and
+                    well-being.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+              <div class="facility-item">
+                <div class="facility-icon bg-info">
+                  <span class="bg-info"></span>
+                  <i class="fa fa-chalkboard-teacher fa-3x text-info"></i>
+                  <span class="bg-info"></span>
+                </div>
+                <div class="facility-text bg-info">
+                  <h3 class="text-info mb-3">Positive Learning</h3>
+                  <p class="mb-0">
+                    Positive learning involves providing children with practical
+                    skills that are essential for their future success. We aim to
+                    offer various educational programs to achieve this goal.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Facilities End -->
+
+     <!-- About Start -->
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+        <h1 class="mb-4">
+          Learn More About Our Work And Our Cultural Activities
+        </h1>
+        <p>
+          Welcome to God's Care Child Ministry Uganda, where we are dedicated to
+          providing care and support to children in need within our community.
+          Founded by Adam Ssebatta and his friends in Mityana, Uganda, our
+          ministry began as a spontaneous response to the needs of children in
+          SSekanyonyi, Mityana, Central Uganda.
+        </p>
+        <p class="mb-4">
+          At God's Care Child Ministry Uganda, our mission is to bring the
+          Fatherhood of God to the fatherless through family structures,
+          Christian education, and biblical self-sustainability. We aim to equip
+          indigenous peoples to carry the message of Jesus, fostering a
+          multi-cultural team focused on shared service.
+        </p>
+        <p class="mb-4">
+          We provide essential care and support to orphans, addressing the root
+          causes of fatherlessness in Uganda. Our goal is to raise up a
+          generation of godly men and women who will stand for truth, defend the
+          widow, care for the orphan, and live out the Gospel of Jesus Christ in
+          every area and sphere of life in Uganda.
+        </p>
+        <div class="row g-4 align-items-center">
+          <div class="col-sm-6">
+            <a class="btn btn-primary rounded-pill py-3 px-5" href=""
+              >Read More</a
+            >
+          </div>
+          <div class="col-sm-6">
+            <div class="d-flex align-items-center">
+              <img
+                class="rounded-circle flex-shrink-0"
+                src="{%static 'img/user1.jpeg'%}"
+                alt=""
+                style="width: 45px; height: 45px"
+              />
+              <div class="ms-3">
+                <h6 class="text-primary mb-1">Adam Ssebatta</h6>
+                <small>CEO & Founder</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 about-img wow fadeInUp" data-wow-delay="0.5s">
+        <div class="row">
+          <div class="col-12 text-center">
+            <img
+              class="img-fluid w-75 rounded-circle bg-light p-3"
+              src="{% static 'img/about-1.jpeg' %}"
+              alt=""
+            />
+          </div>
+          <div class="col-6 text-start" style="margin-top: -150px">
+            <img
+              class="img-fluid w-100 rounded-circle bg-light p-3"
+              src="{% static 'img/abou2.jpg' %}"
+              alt=""
+            />
+          </div>
+          <div class="col-6 text-end" style="margin-top: -150px">
+            <img
+              class="img-fluid w-100 rounded-circle bg-light p-3"
+              src="{%static 'img/abou3.jpg' %}"
+              alt
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- About End -->
+
+     <!-- Call To Action Start -->
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="bg-light rounded">
+      <div class="row g-0">
+        <div
+          class="col-lg-6 wow fadeIn"
+          data-wow-delay="0.1s"
+          style="min-height: 400px"
+        >
+          <div class="position-relative h-100">
+            <img
+              class="position-absolute w-100 h-100 rounded"
+              src="{% static 'img/call-to-action2.jpg' %}"
+              style="object-fit: cover"
+            />
+          </div>
+        </div>
+        <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+          <div class="h-100 d-flex flex-column justify-content-center p-5">
+            <h1 class="mb-4">
+              Become A Donar and support the ministry activities
+            </h1>
+            <p class="mb-4">
+              We're God's Care Child Ministry Uganda, dedicated to feeding,
+              educating, and providing social services to children in need. Your
+              donation can make a significant difference in their lives,
+              ensuring they have access to nutritious meals, educational
+              resources, and the care they need to thrive. Please consider
+              supporting us or contact us at godscarechildministry13@gmail.com
+            </p>
+            <a
+              class="btn btn-primary py-3 px-5"
+              href="https://www.instagram.com/pastorssebattamadam/"
+              >Get Started Now<i class="fa fa-arrow-right ms-2"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Call To Action End -->
+
+      
+<!-- Classes Start -->
+<div class="container-xxl py-5">
+  <div class="container">
+    <div
+      class="text-center mx-auto mb-5 wow fadeInUp"
+      data-wow-delay="0.1s"
+      style="max-width: 600px"
+    >
+      <h1 class="mb-3">Daily Posts</h1>
+      <pclass="mb-4">
+        Explore our daily posts to discover how our ministry is 
+        impacting the lives of children in need. From providing essential services
+         like education and healthcare to offering hope and support, each post highlights our commitment 
+        to making a positive difference in the world. Join us on this journey of compassion and transformation.
+      </pclass=>
+    </div>
+    <div class="mt-5"></div>
+    <div class="row g-4">
+      {% for post in posts %} {% if forloop.counter0|divisibleby:3 %}
+    </div>
+    <div class="row g-4">
+      {% endif %}
+      <div
+        class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp"
+        data-wow-delay="0.1s"
+      >
+        <div class="classes-item">
+          <div class=""></div>
+          <div class="bg-light rounded p-4 pt-5 mt-n5">
+            <img
+              class=""
+              src="{{ post.file.url }}"
+              alt="Not found"
+              style="width: 100%; max-width: 400px; height: auto"
+            />
+            <a class="d-block text-center h6git mt-3 mb-4" href=""
+              >{{ post.description }}</a
+            >
+            <div class="d-flex align-items-center justify-content-between mb-4">
+              <div class="d-flex align-items-center"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Add space between paragraph and next row -->
+    <div class="mt-5"></div>
+  </div>
+</div>
+<!-- Classes End -->
+
+    
+
+      
+<!-- Activities Start -->
+<div class="container-xxl py-5">
+  <div class="container">
+    <div
+      class="text-center mx-auto mb-5 wow fadeInUp"
+      data-wow-delay="0.1s"
+      style="max-width: 600px"
+    >
+      <h1 class="mb-4">
+        These are some of the activities performed at God's Care Child Ministry
+        Uganda.
+      </h1>
+      <p class="mb-4">
+        At God's Care Child Ministry in Uganda, we are dedicated to providing a
+        nurturing environment for children in need. Our ongoing activities aim
+        to enhance their well-being and future prospects. With your support, we
+        can expand our reach and impact, ensuring that every child receives the
+        care and resources they deserve. Together, we can make a difference in
+        the lives of these children, offering them hope, education, and a
+        brighter tomorrow. Join us in this noble cause and be a part of
+        something truly meaningful
+      </p>
+    </div>
+    <div class="mt-5"></div>
+    <div class="row g-4">
+      {% for activity in activities %} {% if forloop.counter0|divisibleby:3 %}
+    </div>
+    <div class="row g-4">
+      {% endif %}
+      <div
+        class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp"
+        data-wow-delay="0.1s"
+      >
+        <div class="activities-item">
+          <div class=""></div>
+          <div class="bg-light rounded p-4 pt-5 mt-n5">
+            <img
+              class=""
+              src="{{ activity.file.url }}"
+              alt="Not found"
+              style="width: 100%; max-width: 400px; height: auto"
+            />
+            <a class="d-block text-center h6 mt-3 mb-4" href=""
+              >{{ activity.name }}</a
+            >
+            <p>{{ activity.description }}</p>
+            <p>Requirements: {{ activity.requirements }}</p>
+            <!-- Add other fields as needed -->
+            <div class="d-flex align-items-center justify-content-between mb-4">
+              <div class="d-flex align-items-center"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Add space between paragraph and next row -->
+    <div class="mt-5"></div>
+  </div>
+</div>
+<!-- Activities End -->
+
+
+
+<!-- Contact Start -->
+<div class="container-xxl py-5">
+  <div class="container">
+    <div
+      class="text-center mx-auto mb-5 wow fadeInUp"
+      data-wow-delay="0.1s"
+      style="max-width: 600px"
+    >
+      <h1 class="mb-3">Get In Touch</h1>
+      <p>
+        At God's Care Child Ministry Uganda, we are dedicated to supporting and
+        uplifting the lives of children in need. Your support can make a
+        significant impact in providing them with essential resources,
+        education, and care. Join us in making a difference in these children's
+        lives by contributing to our cause. Together, we can create a brighter
+        future for the children in our care.
+      </p>
+    </div>
+    <div class="row g-4 mb-5">
+      <div
+        class="col-md-6 col-lg-4 text-center wow fadeInUp"
+        data-wow-delay="0.1s"
+      >
+        <div
+          class="bg-light rounded-circle d-inline-flex align-items-center justify-content-center mb-4"
+          style="width: 75px; height: 75px"
+        >
+          <i class="fa fa-map-marker-alt fa-2x text-primary"></i>
+        </div>
+        <h6>Mityana Uganda</h6>
+      </div>
+      <div
+        class="col-md-6 col-lg-4 text-center wow fadeInUp"
+        data-wow-delay="0.3s"
+      >
+        <div
+          class="bg-light rounded-circle d-inline-flex align-items-center justify-content-center mb-4"
+          style="width: 75px; height: 75px"
+        >
+          <i class="fa fa-envelope-open fa-2x text-primary"></i>
+        </div>
+        <h6>godscarechildministry13@gmail.com</h6>
+      </div>
+      <div
+        class="col-md-6 col-lg-4 text-center wow fadeInUp"
+        data-wow-delay="0.5s"
+      >
+        <div
+          class="bg-light rounded-circle d-inline-flex align-items-center justify-content-center mb-4"
+          style="width: 75px; height: 75px"
+        >
+          <i class="fa fa-phone-alt fa-2x text-primary"></i>
+        </div>
+        <h6>+256755894172</h6>
+      </div>
+    </div>
+    <div class="bg-light rounded">
+      <div class="row g-0">
+        <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+          <div class="h-100 d-flex flex-column justify-content-center p-5">
+            <p class="mb-4">CONTACT US</p>
+            <form method="post" action="{% url 'send_email' %}">
+              {% csrf_token %}
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <div class="form-floating">
+                    <input
+                      type="text"
+                      class="form-control border-0"
+                      id="name"
+                      placeholder="Your Name"
+                      name="name"
+                    />
+                    <label for="name">Your Name</label>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-floating">
+                    <input
+                      type="email"
+                      class="form-control border-0"
+                      id="email"
+                      placeholder="Your Email"
+                      name="email"
+                    />
+                    <label for="email">Your Email</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-floating">
+                    <input
+                      type="text"
+                      class="form-control border-0"
+                      id="subject"
+                      placeholder="Subject"
+                      name="subject"
+                    />
+                    <label for="subject">Subject</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-floating">
+                    <textarea
+                      class="form-control border-0"
+                      placeholder="Leave a message here"
+                      id="message"
+                      style="height: 100px"
+                      name="message"
+                    ></textarea>
+                    <label for="message">Message</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-primary w-100 py-3" type="submit">
+                    Send Message
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div
+          class="col-lg-6 wow fadeIn"
+          data-wow-delay="0.5s"
+          style="min-height: 400px"
+        >
+          <div class="position-relative h-100">
+            <iframe
+              class="position-relative rounded w-100 h-100"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d66591.79200333622!2d32.04160628556831!3d0.4138841186163096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177da4eac1e92f15%3A0x3032eef05b4f3d0!2sMityana%20District!5e0!3m2!1sen!2sug!4v1647372064896!5m2!1sen!2sug"
+              frameborder="0"
+              style="min-height: 400px; border: 0"
+              allowfullscreen=""
+              aria-hidden="false"
+              tabindex="0"
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Contact End -->
+
+
+      <script>
+        document
+          .getElementById("contactForm")
+          .addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+      
+            // Get form data
+            const formData = new FormData(this);
+      
+            // Create a URL-encoded string from the form data
+            const params = new URLSearchParams(formData).toString();
+      
+            // Send POST request to a server endpoint that handles email sending
+            fetch("https://example.com/send_email", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+              },
+              body: params,
+            })
+              .then((response) => {
+                if (response.ok) {
+                  alert("Email sent successfully");
+                  // Optionally, clear the form fields
+                  this.reset();
+                } else {
+                  alert("Failed to send email");
+                }
+              })
+              .catch((error) => {
+                console.error("Error:", error);
+                alert("An error occurred");
+              });
+          });
+      </script>
+
+      {% endblock%}
+
+      <!-- Footer Start -->
+      <div
+        class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn"
+        data-wow-delay="0.1s"
+      >
+        <div class="container py-5">
+          <div class="row g-5">
+            <div class="col-lg-3 col-md-6">
+              <h3 class="text-white mb-4">Get In Touch</h3>
+              <p class="mb-2">
+                <i class="fa fa-map-marker-alt me-3"></i>Mityana Uganda
+              </p>
+              <p class="mb-2">
+                <i class="fa fa-phone-alt me-3"></i>+256755894172
+              </p>
+              <p class="mb-2">
+                <i class="fa fa-envelope me-3"></i
+                >godscarechildministry13@gmail.com
+              </p>
+              <div class="d-flex pt-2">
+                <a
+                  class="btn btn-outline-light btn-social"
+                  href="https://www.instagram.com/pastorssebattamadam/"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a
+                  class="btn btn-outline-light btn-social"
+                  href="https://www.instagram.com/pastorssebattamadam/"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a
+                  class="btn btn-outline-light btn-social"
+                  href="https://www.instagram.com/pastorssebattamadam/"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a
+                  class="btn btn-outline-light btn-social"
+                  href="https://www.instagram.com/pastorssebattamadam/"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <h3 class="text-white mb-4">Quick Links</h3>
+              <a class="btn btn-link text-white-50" href="{% url 'about' %}"
+                >About Us</a
+              >
+              <a class="btn btn-link text-white-50" href="{% url 'contact' %}"
+                >Contact Us</a
+              >
+              <a class="btn btn-link text-white-50" href="{% url 'index' %}"
+                >Home</a
+              >
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <h3 class="text-white mb-4">Photo Gallery</h3>
+              <div class="row g-2 pt-2">
+                <div class="col-4">
+                  <img
+                    class="img-fluid rounded bg-light p-1"
+                    src="img/classes-1.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="col-4">
+                  <img
+                    class="img-fluid rounded bg-light p-1"
+                    src="img/classes-2.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="col-4">
+                  <img
+                    class="img-fluid rounded bg-light p-1"
+                    src="img/classes-3.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="col-4">
+                  <img
+                    class="img-fluid rounded bg-light p-1"
+                    src="img/classes-4.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="col-4">
+                  <img
+                    class="img-fluid rounded bg-light p-1"
+                    src="img/classes-5.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="col-4">
+                  <img
+                    class="img-fluid rounded bg-light p-1"
+                    src="img/classes-6.jpg"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <h3 class="text-white mb-4">Gods Care</h3>
+              <p>Donate Now by Contacting God's Care Child Ministry Uganda</p>
+              <div class="position-relative mx-auto" style="max-width: 400px">
+                <button
+                  type="button"
+                  class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2"
+                ></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="copyright">
+            <div class="row">
+              <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                &copy;
+                <a class="border-bottom" href="#">God's Care Child Ministry</a>,
+                All Right Reserved.
+              </div>
+              <div class="col-md-6 text-center text-md-end">
+                <div class="footer-menu"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Footer End -->
+
+      <!-- Back to Top -->
+      <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
+        ><i class="bi bi-arrow-up"></i
+      ></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>

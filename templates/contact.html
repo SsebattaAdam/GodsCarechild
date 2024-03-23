@@ -1,0 +1,194 @@
+{% extends "index.html" %} {% block title%} Contact God's Care child Ministry
+Uganda{%endblock%} {% load static%} {% block content %}
+<!-- About Start -->
+{% if messages %}
+<ul class="messages">
+  {% for message in messages %}
+  <li>{{ message }}</li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+<!-- Contact Start -->
+<div class="container-xxl py-5">
+  <div class="container">
+    <div
+      class="text-center mx-auto mb-5 wow fadeInUp"
+      data-wow-delay="0.1s"
+      style="max-width: 600px"
+    >
+      <h1 class="mb-3">Get In Touch</h1>
+      <p>
+        At God's Care Child Ministry Uganda, we are dedicated to supporting and
+        uplifting the lives of children in need. Your support can make a
+        significant impact in providing them with essential resources,
+        education, and care. Join us in making a difference in these children's
+        lives by contributing to our cause. Together, we can create a brighter
+        future for the children in our care.
+      </p>
+    </div>
+    <div class="row g-4 mb-5">
+      <div
+        class="col-md-6 col-lg-4 text-center wow fadeInUp"
+        data-wow-delay="0.1s"
+      >
+        <div
+          class="bg-light rounded-circle d-inline-flex align-items-center justify-content-center mb-4"
+          style="width: 75px; height: 75px"
+        >
+          <i class="fa fa-map-marker-alt fa-2x text-primary"></i>
+        </div>
+        <h6>Mityana Uganda</h6>
+      </div>
+      <div
+        class="col-md-6 col-lg-4 text-center wow fadeInUp"
+        data-wow-delay="0.3s"
+      >
+        <div
+          class="bg-light rounded-circle d-inline-flex align-items-center justify-content-center mb-4"
+          style="width: 75px; height: 75px"
+        >
+          <i class="fa fa-envelope-open fa-2x text-primary"></i>
+        </div>
+        <h6>godscarechildministry13@gmail.com</h6>
+      </div>
+      <div
+        class="col-md-6 col-lg-4 text-center wow fadeInUp"
+        data-wow-delay="0.5s"
+      >
+        <div
+          class="bg-light rounded-circle d-inline-flex align-items-center justify-content-center mb-4"
+          style="width: 75px; height: 75px"
+        >
+          <i class="fa fa-phone-alt fa-2x text-primary"></i>
+        </div>
+        <h6>+256755894172</h6>
+      </div>
+    </div>
+    <div class="bg-light rounded">
+      <div class="row g-0">
+        <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+          <div class="h-100 d-flex flex-column justify-content-center p-5">
+            <p class="mb-4">CONTACT US</p>
+            <form method="post" action="{% url 'send_email' %}">
+              {% csrf_token %}
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <div class="form-floating">
+                    <input
+                      type="text"
+                      class="form-control border-0"
+                      id="name"
+                      placeholder="Your Name"
+                      name="name"
+                    />
+                    <label for="name">Your Name</label>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-floating">
+                    <input
+                      type="email"
+                      class="form-control border-0"
+                      id="email"
+                      placeholder="Your Email"
+                      name="email"
+                    />
+                    <label for="email">Your Email</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-floating">
+                    <input
+                      type="text"
+                      class="form-control border-0"
+                      id="subject"
+                      placeholder="Subject"
+                      name="subject"
+                    />
+                    <label for="subject">Subject</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-floating">
+                    <textarea
+                      class="form-control border-0"
+                      placeholder="Leave a message here"
+                      id="message"
+                      style="height: 100px"
+                      name="message"
+                    ></textarea>
+                    <label for="message">Message</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-primary w-100 py-3" type="submit">
+                    Send Message
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div
+          class="col-lg-6 wow fadeIn"
+          data-wow-delay="0.5s"
+          style="min-height: 400px"
+        >
+          <div class="position-relative h-100">
+            <iframe
+              class="position-relative rounded w-100 h-100"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d66591.79200333622!2d32.04160628556831!3d0.4138841186163096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177da4eac1e92f15%3A0x3032eef05b4f3d0!2sMityana%20District!5e0!3m2!1sen!2sug!4v1647372064896!5m2!1sen!2sug"
+              frameborder="0"
+              style="min-height: 400px; border: 0"
+              allowfullscreen=""
+              aria-hidden="false"
+              tabindex="0"
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Contact End -->
+
+<script>
+  document
+    .getElementById("contactForm")
+    .addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent the form from submitting normally
+
+      // Get form data
+      const formData = new FormData(this);
+
+      // Create a URL-encoded string from the form data
+      const params = new URLSearchParams(formData).toString();
+
+      // Send POST request to a server endpoint that handles email sending
+      fetch("https://example.com/send_email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: params,
+      })
+        .then((response) => {
+          if (response.ok) {
+            alert("Email sent successfully");
+            // Optionally, clear the form fields
+            this.reset();
+          } else {
+            alert("Failed to send email");
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          alert("An error occurred");
+        });
+    });
+</script>
+
+{% endblock%}

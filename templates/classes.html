@@ -1,0 +1,58 @@
+{% extends "index.html" %} {% block title%} About God's Care Child Ministry
+Uganda{% endblock %} {% load static%} {% block content %}
+
+
+<!-- Classes Start -->
+<div class="container-xxl py-5">
+  <div class="container">
+    <div
+      class="text-center mx-auto mb-5 wow fadeInUp"
+      data-wow-delay="0.1s"
+      style="max-width: 600px"
+    >
+      <h1 class="mb-3">Daily Posts</h1>
+      <pclass="mb-4">
+        Explore our daily posts to discover how our ministry is 
+        impacting the lives of children in need. From providing essential services
+         like education and healthcare to offering hope and support, each post highlights our commitment 
+        to making a positive difference in the world. Join us on this journey of compassion and transformation.
+      </pclass=>
+    </div>
+    <div class="mt-5"></div>
+    <div class="row g-4">
+      {% for post in posts %} {% if forloop.counter0|divisibleby:3 %}
+    </div>
+    <div class="row g-4">
+      {% endif %}
+      <div
+        class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp"
+        data-wow-delay="0.1s"
+      >
+        <div class="classes-item">
+          <div class=""></div>
+          <div class="bg-light rounded p-4 pt-5 mt-n5">
+            <img
+              class=""
+              src="{{ post.file.url }}"
+              alt="Not found"
+              style="width: 100%; max-width: 400px; height: auto"
+            />
+            <a class="d-block text-center h6 mt-3 mb-4" href=""
+              >{{ post.description }}</a
+            >
+            <div class="d-flex align-items-center justify-content-between mb-4">
+              <div class="d-flex align-items-center"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Add space between paragraph and next row -->
+    <div class="mt-5"></div>
+  </div>
+</div>
+<!-- Classes End -->
+
+{% endblock %}

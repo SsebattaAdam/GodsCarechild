@@ -1,0 +1,160 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Admin Page</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css1/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'css1/style.css' %}" />
+
+    <style>
+      .card {
+          color: #fff; /* Text color */
+          transition: background-color 0.3s; /* Smooth transition on hover */
+          height: 200px; /* Set the height of the card */
+          cursor: pointer; /* Change cursor to pointer on hover */
+      }
+  
+      .card:hover {
+          opacity: 0.8; /* Darken the card on hover */
+      }
+  
+      .red {
+          background-color: #ff6347; /* Red background color */
+      }
+  
+      .blue {
+          background-color: #4169e1; /* Blue background color */
+      }
+  
+      .green {
+          background-color: #2e8b57; /* Green background color */
+      }
+  
+      .purple {
+          background-color: #800080; /* Purple background color */
+      }
+  
+      .card.selected {
+          opacity: 1; /* Reset opacity when selected */
+      }
+  </style>
+  
+  </head>
+  <body>
+    <div class="wrapper d-flex align-items-stretch">
+      <nav id="sidebar">
+        <div class="custom-menu">
+          <button type="button" id="sidebarCollapse" class="btn btn-primary">
+            <i class="fa fa-bars"></i>
+            <span class="sr-only">Toggle Menu</span>
+          </button>
+        </div>
+        <div class="p-4 pt-5">
+          <h1><a href="{% url 'index' %}" class="logo">Splash</a></h1>
+          <ul class="list-unstyled components mb-5">
+            <li class="active">
+              <a href="{% url 'addActivity' %}" class="nav-item nav-link active"
+              >Add Activity</a
+            >
+            </li>
+            <li>
+              <a href="#">Project</a>
+            </li>
+            <li>
+              <a
+                href="#pageSubmenu"
+                data-toggle="collapse"
+                aria-expanded="false"
+                class="dropdown-toggle"
+                >Pages</a
+              >
+              <ul class="collapse list-unstyled" id="pageSubmenu">
+                <li>
+                  <a href="{% url 'addPost' %}" class="nav-item nav-link active"
+                    >Add Post</a
+                  >
+                </li>
+                <li>
+                  <a href="{% url 'display_tables' %}" class="nav-item nav-link active"
+                    >Tables</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <div class="mb-5">
+            <form action="#" class="colorlib-subscribe-form">
+              <div class="form-group d-flex">
+                <div class="icon"><span class="icon-paper-plane"></span></div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+        <h2 class="mb-4">Dashboard</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card red" onclick="toggleSelected(this)">
+                    <div class="card-body">
+                        <h5 class="card-title">Box 1</h5>
+                        <p class="card-text">Content for Box 1</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card blue" onclick="toggleSelected(this)">
+                    <div class="card-body">
+                        <h5 class="card-title">Box 2</h5>
+                        <p class="card-text">Content for Box 2</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card green" onclick="toggleSelected(this)">
+                    <div class="card-body">
+                        <h5 class="card-title">Box 3</h5>
+                        <p class="card-text">Content for Box 3</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card purple" onclick="toggleSelected(this)">
+                    <div class="card-body">
+                        <h5 class="card-title">Box 4</h5>
+                        <p class="card-text">Content for Box 4</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+      function toggleSelected(element) {
+          element.classList.toggle('selected');
+      }
+  </script>
+
+    <script src="{% static 'js1/jquery.min.js' %}"></script>
+    <script src="{% static 'js1/popper.js' %}"></script>
+    <script src="{% static 'js1/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js1/main.js' %}"></script>
+  </body>
+</html>

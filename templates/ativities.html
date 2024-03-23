@@ -1,0 +1,67 @@
+{% extends "index.html" %} {% block title %}About God's Care Child Ministry
+Uganda{% endblock %} {% load static %} {% block content %}
+
+<!-- Activities Start -->
+<div class="container-xxl py-5">
+  <div class="container">
+    <div
+      class="text-center mx-auto mb-5 wow fadeInUp"
+      data-wow-delay="0.1s"
+      style="max-width: 600px"
+    >
+      <h1 class="mb-4">
+        These are some of the activities performed at God's Care Child Ministry
+        Uganda.
+      </h1>
+      <p class="mb-4">
+        At God's Care Child Ministry in Uganda, we are dedicated to providing a
+        nurturing environment for children in need. Our ongoing activities aim
+        to enhance their well-being and future prospects. With your support, we
+        can expand our reach and impact, ensuring that every child receives the
+        care and resources they deserve. Together, we can make a difference in
+        the lives of these children, offering them hope, education, and a
+        brighter tomorrow. Join us in this noble cause and be a part of
+        something truly meaningful
+      </p>
+    </div>
+    <div class="mt-5"></div>
+    <div class="row g-4">
+      {% for activity in activities %} {% if forloop.counter0|divisibleby:3 %}
+    </div>
+    <div class="row g-4">
+      {% endif %}
+      <div
+        class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp"
+        data-wow-delay="0.1s"
+      >
+        <div class="activities-item">
+          <div class=""></div>
+          <div class="bg-light rounded p-4 pt-5 mt-n5">
+            <img
+              class=""
+              src="{{ activity.file.url }}"
+              alt="Not found"
+              style="width: 100%; max-width: 400px; height: auto"
+            />
+            <a class="d-block text-center h6 mt-3 mb-4" href=""
+              >{{ activity.name }}</a
+            >
+            <p>{{ activity.description }}</p>
+            <p>Requirements: {{ activity.requirements }}</p>
+            <!-- Add other fields as needed -->
+            <div class="d-flex align-items-center justify-content-between mb-4">
+              <div class="d-flex align-items-center"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Add space between paragraph and next row -->
+    <div class="mt-5"></div>
+  </div>
+</div>
+<!-- Activities End -->
+
+{% endblock %}

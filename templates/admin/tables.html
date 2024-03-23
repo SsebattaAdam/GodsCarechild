@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Combined Tables</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      function deleteActivity(id) {
+        if (confirm("Are you sure you want to delete this item?")) {
+          $.ajax({
+            type: "POST",
+            url: `/delete_activity/${id}/`,
+            data: {
+              csrfmiddlewaretoken: "{{ csrf_token }}",
+            },
+            success: function (data) {
+              alert(data.message);
+              if (data.success) {
+                location.reload();
+              
+              }
+            },
+            error: function (xhr, status, error) {
+              console.error("Error:", error);
+              alert("An error occurred while deleting the item.");
+            },
+          });
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <table
+      border="1"
+      style="border-collapse: collapse; width: 50%; margin: 0 auto"
+    >
+      <caption style="font-weight: bold; color: green">
+        Table 1
+      </caption>
+      <tr style="background-color: lightgreen">
+        <th>Name</th>
+        <th>Description</th>
+        <th>Requirements</th>
+        <th>File</th>
+        <th>Actions</th>
+      </tr>
+      {% for activity in activities %}
+      <tr>
+        <td>{{ activity.name }}</td>
+        <td>{{ activity.description }}</td>
+        <td>{{ activity.requirements }}</td>
+        <td>{{ activity.file }}</td>
+        <td>
+          <button onclick="deleteActivity({{ activity.id }})">Delete</button>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+
+    <table
+      border="1"
+      style="border-collapse: collapse; width: 50%; margin: 20px auto"
+    >
+      <caption style="font-weight: bold; color: green">
+        Table 2
+      </caption>
+      <tr style="background-color: lightgreen">
+        <th>File</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+      {% for post in posts %}
+      <tr>
+        <td>{{ post.file }}</td>
+        <td>{{ post.description }}</td>
+        <td>
+          <form action="{% url 'delete_post' post.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Delete</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
