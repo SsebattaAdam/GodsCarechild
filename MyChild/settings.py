@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-import django_heroku
+# import django_heroku
 from pathlib import Path
 import os
 
@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-k1tn)9@lho9eejhb*n+-llp+f0@_&af)rh8@y3q)=!-&0-$x5q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'MychildApp',
-    'django_heroku',
+
 ]
 
 MIDDLEWARE = [
@@ -125,7 +125,7 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
@@ -139,5 +139,5 @@ EMAIL_HOST_USER = 'adamssebatta@gmail.com'
 EMAIL_HOST_PASSWORD = 'dkzpptylqadyhtno'
 
 
-# activate
-django_heroku.settings(locals())
+# # activate
+# django_heroku.settings(locals())
